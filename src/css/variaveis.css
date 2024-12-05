@@ -1,0 +1,15 @@
+:root {
+    --cor-primaria: hsl(193, 38%, 86%);
+    --cor-secundaria:  hsl(150, 100%, 66%);    
+    --cor-branca: #fff;
+    --cor-fundo-escuro:  hsl(218, 23%, 16%) ;    
+    --cor-fundo-principal: hsl(218, 23%, 16%);
+    --cor-fundo-cinza-claro: hsl(217, 19%, 24%);    
+  }
+    
+  :root {
+    --fonte-primaria: 'Manrope', sans serif;
+    --fonte-grande: 2rem;
+    --fonte-normal: 1.5rem;
+  }
+  
