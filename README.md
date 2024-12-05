@@ -36,11 +36,11 @@ Aplicação web que gera conselhos aleatórios através de uma API, criada como 
 - O número do conselho e sua mensagem serão atualizados automaticamente
 
 ## 📸 Captura de Tela
-![Captura de Tela do Projeto](caminho/para/sua/imagem.png)
+![Captura de Tela do Projeto](./src/images/gerador-conselho.png)
 
 ## 🔗 Links
 - [Desafio no Frontend Mentor](https://www.frontendmentor.io)
-- [Repositório no GitHub](seu-link-do-github)
+- [Repositório no GitHub](https://github.com/Andrekrykhtine?tab=repositories)
 
 ## 👤 Autor
 Andre Krykhtine

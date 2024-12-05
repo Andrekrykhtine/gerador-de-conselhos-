@@ -36,4 +36,4 @@ async function fetchAdvice() {
 adviceButton.addEventListener("click", fetchAdvice);
 
 // Carrega um conselho inicial ao carregar a página
-fetchAdvice();
+//fetchAdvice();
