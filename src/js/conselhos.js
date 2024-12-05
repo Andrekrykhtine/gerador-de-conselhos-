@@ -1,26 +1,39 @@
-const bntdado = document.getElementById('botao')
-const conselhos = document.getElementById('conselho')
-const mensagens = document.getElementById('mensagem')
+// Seleção de elementos
+const adviceButton = document.getElementById('botao');
+const adviceNumberElement = document.getElementById('conselho');
+const adviceMessageElement = document.getElementById('mensagem');
 
+// URL da API de conselhos
+const ADVICE_API_URL = "https://api.adviceslip.com/advice";
 
-async function pegarConselho() {
+// Função para buscar conselho da API
+async function fetchAdvice() {
     try {
-        const url = "https://api.adviceslip.com/advice"
-        const resposta = await fetch(url); //fecth pega a resposta do api e gera uma promise
+        // Busca conselho da API
+        const response = await fetch(ADVICE_API_URL);
 
-        if (!resposta.ok) {
-            throw new Error("Ocorreu um erro ao tentar buscar as informações da API");
+        // Verifica se a resposta é válida
+        if (!response.ok) {
+            throw new Error("Falha ao buscar conselho");
         }
 
+        // Extrai dados do conselho
+        const { slip } = await response.json();
+        const { id: adviceNumber, advice: adviceMessage } = slip;
 
-        const conselho = await resposta.json()//.json retorna uma promise
-        const conselhoRecebido = conselho.slip.advice;
-        const numeroConselho = conselho.slip.id
-        mensagens.textContent = conselhoRecebido
-        conselhos.textContent += numeroConselho
+        // Atualiza elementos da página
+        adviceMessageElement.textContent = adviceMessage;
+        adviceNumberElement.textContent = `ADVICE #${adviceNumber}`;
+
     } catch (error) {
-        console.error("Erro ao tentar buscar as informações da API", error);
+        // Tratamento de erro
+        console.error("Erro ao buscar conselho:", error);
+        adviceMessageElement.textContent = "Não foi possível carregar o conselho. Tente novamente.";
     }
-
 }
-botao.addEventListener("click", () => { pegarConselho() })
+
+// Adiciona evento de clique para buscar novo conselho
+adviceButton.addEventListener("click", fetchAdvice);
+
+// Carrega um conselho inicial ao carregar a página
+fetchAdvice();

@@ -1,77 +1,75 @@
-html {
-  font-size: 62.5%;
+body {
   color: var(--cor-branca);
   font-weight: 800;
   font-family: var(--fonte-primaria);
 }
 
-main {
+.advice-generator {
   background-color: var(--cor-fundo-principal);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.caixa-mensagem {
+.advice-card {
   background-color: var(--cor-fundo-cinza-claro);
-  height: 270px;
-  /* Permite que a caixa cresça conforme necessário */
-  
-  /* Mantém uma altura mínima */
+  width: 100%;
   max-width: 430px;
+  min-height: 270px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: relative;
+  padding: 25px;
+  text-align: center;
 }
 
-.caixa-mensagem .texto {
-  margin: 25px;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: space-between;
-  /* Distribui o espaço verticalmente */
-}
-.caixa-mensagem .numero-mensagem{
+.advice-number {
   color: var(--cor-secundaria);
-  font-size: 1.2rem;
+  font-size:var(--fonte-normal);
   font-weight: 600;
-  margin: 20px;
-  
-} 
-.caixa-mensagem .texto .mensagem {
+  margin-bottom: 20px;
+}
+
+.advice-text {
   font-size: var(--fonte-grande);
   margin-bottom: 30px;
-  text-align: center;
   min-height: 80px;
-  /* Altura mínima para a mensagem */
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-
-.caixa-mensagem .texto .botao {
-  background-color: var(--cor-secundaria);
-  padding: 15px;
-  border-radius: 50%;
-  margin-top: auto;
-  /* Empurra o botão para a parte inferior */
-  position: relative;
-  bottom: -35px;
-  /* Ajusta a posição do botão para fora da caixa */
+.divider {
+  margin-bottom: 20px;
 }
 
-.caixa-mensagem picture img {
+.divider img {
   max-width: 100%;
-  text-align: center;
-
 }
 
-.caixa-mensagem .texto .botao:hover {
-  color: #53FFAB;
+.advice-generator-button {
+  background-color: var(--cor-secundaria);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: box-shadow 0.3s ease;
+}
+
+.advice-generator-button:hover {
   cursor: pointer;
   box-shadow: 0 5px 15px hsl(150, 100%, 66%);
+}
+
+.advice-generator-button img {
+  width: 24px;
+  height: 24px;
 }
